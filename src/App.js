@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./styles.css";
 
-function App() {
+const App = () => { 
+  return(
+    <div>
+    <ContactCard/>
+    <ContactCard/>
+    <ContactCard/>
+    <Card/>
+  </div>
+    
+);
+}
+
+const ContactCard = () => {
+  // 1st variable access the state value, 2nd enables changes.
+  const [showAge, setShowAge] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="contact-card">
+      <img src="https://via.placeholder.com/150" alt="profile" />
+      <div className="user-details">
+        <p>Name: Jenny Han</p>
+        <p>Email: Jenny.Han@notreal.com</p>
+        {showAge === true ? <p>Age: 25</p> : null}
+      </div>
     </div>
   );
-}
+};
+
+ const Card=()=>{
+   return(
+     <div>
+       <h2> Tasty burger</h2>
+       {/* <img>https://source.unsplash.com/400x300/?burger</img> */}
+       <p>It's good burger</p>
+     </div>
+
+   );
+ }
+ 
+
+
+
 
 export default App;
