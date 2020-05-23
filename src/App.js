@@ -16,6 +16,7 @@ const App = () => {
 const ContactCard = () => {
   // 1st variable access the state value, 2nd enables changes.
   const [showAge, setShowAge] = useState(true);
+  
 
   return (
     <div className="contact-card">
@@ -23,6 +24,9 @@ const ContactCard = () => {
       <div className="user-details">
         <p>Name: Jenny Han</p>
         <p>Email: Jenny.Han@notreal.com</p>
+        <button onClick={() => setShowAge(!showAge)}>
+	Toggle Age 
+</button>
         {showAge === true ? <p>Age: 25</p> : null}
       </div>
     </div>
